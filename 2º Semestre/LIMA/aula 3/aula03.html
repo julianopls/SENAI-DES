@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body style="background-image: url('nohat_upscaled_x4_847a6d825b23d20.jpg'); background-size: 1700px;">
+    <center>
+    <font size = "4"color = "white">
+    
+    <marquee style="font-size: 50px;">Aura Lanches</marquee>
+
+
+    <h3>Peça seu lanche!</h3>
+    <br>
+    <form action=""method="">
+        <label for="nome">Nome completo</label>
+        <br>
+    </form>
+    <input type="text" id="nome" placeholder="Insira seu nome" required/>
+     <p><label for="datanascimento">Data de Nascimento
+        <br>
+    </label>
+    <input id="datanascimento" type="date">
+    </p>
+    <label for="endereco">Endereço:</label>
+    <br>
+    <input type="text" id="endereco" name="endereco" autocomplete="street-address" required/>
+     <br>
+    <label for="numero">Número:</label>
+    <br>
+    <input type="text" id="numero" name="numero" autocomplete="address-line2" required/>
+    <br>
+    <label for="complemento">Complemento:</label>
+    <br>
+    <input type="text" id="complemento" name="complemento" placeholder="Apartamento, Bloco, etc.">
+    <br>
+    <p>
+    <label for="email">E-mail
+        <br>
+    </label>
+    <input id="email" type="email" placeholder="Informe seu E-mail" required/>
+    </p>
+
+    <style color = "black">
+
+    </style>
+     <fieldset style="border: 2px none black;">
+    <center>
+     <legend>Gênero</legend>
+     <br>
+     </center>
+    <img src="masc.png" width="100" height="100" >
+    <input type="radio" id="masc" name="genero"/>
+               
+    <img src="fem.png" width="100" height="100" >
+    <input type="radio" id="fem" name="genero"/> 
+    <br>
+    <style>
+     #masc {
+    accent-color: blue ;
+    }
+    #fem  {
+    accent-color: rgb(235, 13, 187) ;
+    }
+    
+    </style>  
+    <br>
+    <fieldset style="border: 2px none black;">
+        <center>
+        <legend>Monte sua aura</legend>
+        </center>
+        <br>
+        <center>
+        <img src="">
+        <input type="checkbox" id="salada"/>
+        <label for="salada">Salada aura - R$25.00</label>
+        <br>
+        <input type="checkbox" id="hamburguer"/>
+        <label for="Hamburguer">Hamburguer aura - R$29.99</label>
+        <br>
+        <input type="checkbox" id="bacon"/>
+        <label for="bancon">Bacon aura - R$35.00</label>
+        <br>
+        <input type="checkbox" id="tudo"/>
+        <label for="tudo">Aura tudo - R$40.00</label>
+        <br>
+        <input type="checkbox" id="chicken"/>
+        <label for="chicken">Chicken aura - R$37.99</label>
+        <br>
+        <input type="checkbox" id="cheddar"/>
+        <label for="cheddar">Cheddar aura - R$45.00</label>
+        <br>
+        <input type="checkbox" id="fish"/>
+        <label for="fish">Fish aura - R$38.00</label>
+        <br>
+        </center>
+        <style>
+        #salada {
+            accent-color: rgb(8, 221, 72);
+        }
+        #bacon {
+            accent-color: rgb(238, 75, 203);
+          }
+          #aura {
+            accent-color: rgb(15, 8, 221);
+        }
+        #chicken {
+            accent-color: rgb(224, 115, 38);
+          }
+          #hamburguer {
+            accent-color: rgb(0, 0, 0);
+        }
+        #cheddar {
+            accent-color: rgb(207, 246, 10);
+          }
+          #fish {
+            accent-color: rgb(255, 3, 200);
+          }
+        </style>
+    </fieldset>
+    <br>
+    <fieldset style="border: 2px none black; text-align: center;">
+    <legend>Bebida aura</legend>
+    <table style="margin: auto; text-align: center;">
+    <tr>
+    <td>
+    <img src="cocacola.png" height="150" width="150"><br>
+    <input type="checkbox" id="coca"><br>
+    <label for="coca">Coca Cola - R$5.00</label>
+    </td>
+    <td>
+    <img src="pepsizero.png" height="150" width="150"><br>
+    <input type="checkbox" id="pepsi"><br>
+    <label for="pepsi">Pepsi - R$5.99</label>
+    </td>
+    <td>
+    <img src="guarana.png" height="150" width="150"><br>
+    <input type="checkbox" id="guarana"><br>
+    <label for="guarana">Guaraná - R$4.00</label>
+    </td>
+    <td>
+    <img src="fanta.png" height="150" width="150"><br>
+    <input type="checkbox" id="fanta"><br>
+    <label for="fanta">Fanta - R$5.00</label>
+    </td>
+    </tr>
+    </table>
+</fieldset>
+    <p>
+        <label for="volume">Nota do pedido (0 a 10)
+            <br>
+        </label>
+        <input id="volume" type="range" min="0" max="10" value="0" oninput="valorVolume.textContent = this.value"/>
+        <span id="valorVolume">0</span>
+        <style>
+            #volume {
+                accent-color: black;
+            }
+        </style>
+    </p>
+    </font>
+
+</body>
+</html>

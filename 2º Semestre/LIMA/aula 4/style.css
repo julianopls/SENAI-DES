@@ -1,0 +1,78 @@
+body {
+    background: url('fundo.jpg'); background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+header {
+    background-color: rgb(38, 120, 226);
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header h1{
+   margin: 0;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cartao {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    background-color: rgba(185, 182, 182, 0.8);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0,3s ease, box-shadow 0,3s ease;
+
+}
+
+.cartao:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.cartao img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+#titulo{
+    color: black;
+}
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+  }
+
+.cartao {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    background: #8d8dfffe;
+    }
