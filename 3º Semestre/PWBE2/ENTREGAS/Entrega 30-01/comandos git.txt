@@ -1,0 +1,21 @@
+git cofig --global user.name "julianopls"
+
+git cofig --global user.email "brolezzijuliano@gmail.com"
+
+__________________________________________________________________________
+
+git clone https://github.com/julianopls/SENAI-DES.git
+
+__________________________________________________________________________
+
+git add .
+
+git commit-m "julianopls"
+
+git push
+
+
+___________________________________________________________________________
+
+
+git pull
