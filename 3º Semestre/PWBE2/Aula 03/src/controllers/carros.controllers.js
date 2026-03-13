@@ -55,15 +55,26 @@ const buscarCarro = async (req, res) => {
 const apagarCarro = async (req, res) => {
     const { id } = req.params;
     const carro = await prisma.carros.delete({
-        where: { id }
+        where: { id: Number(id) }
     });
 
     res.json(carro).status(200).end();
+};
+const atualizarCarros = async (req, res) => {
+    const { id } = req.params;
+    const dados = req.body;
+   
+    const carros = await prisma.carros.update({
+        where: { id: Number(id) },
+        data: dados
+    });
+    res.status(200).json(carros);
 };
 
 module.exports = {
     novoCarro,
     listarCarros,
     buscarCarro,
-    apagarCarro
+    apagarCarro,
+    atualizarCarros
 };

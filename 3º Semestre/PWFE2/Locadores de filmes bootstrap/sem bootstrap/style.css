@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0f1117; 
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+
+header {
+    background: linear-gradient(90deg, #1a1c23 0%, #0f1117 100%);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2d3748;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: #4f46e5; 
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+}
+
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+}
+
+th {
+    background: transparent;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 15px;
+    text-align: center;
+}
+
+td {
+    background: #1a1c23;
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+td:first-child { 
+    border-radius: 12px 0 0 12px; 
+}
+td:last-child { 
+    border-radius: 0 12px 12px 0; 
+}
+
+
+.img-capa {
+    width: 60px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+}
+
+.img-capa:hover {
+    transform: scale(1.5); 
+    z-index: 10;
+}
+
+button[onclick*="removerFilme"] {
+    background: #ef4444;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+button[onclick*="removerFilme"]:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    justify-content: center;
+    align-items: center; 
+}
+
+.modal-content {
+    background-color: #1a1c23; 
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+
+input {
+    background: #0f1117;
+    border: 1px solid #2d3748;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #4f46e5;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}

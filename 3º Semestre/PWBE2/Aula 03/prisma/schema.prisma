@@ -25,5 +25,5 @@ model Clientes {
   nome  String
   cpf   String @unique
   email String @unique
-  cnh   String
+  CNH   String
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Locadora - Cadastro de Filmes</title>
+</head>
+<body>
+
+    <header>
+        <h1>Cadastro de Filmes</h1>
+        <button onclick="abrirModal()">+ Novo Filme</button>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                <th>Capa</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Gênero</th>
+                <th>Ano</th>
+                <th>Ações</th>
+                </tr>
+        </thead>
+            <tbody id="dados"></tbody>
+        </table>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Novo Filme</h2>
+            <input type="text" id="titulo" placeholder="Título do Filme">
+            <input type="text" id="genero" placeholder="Gênero">
+            <input type="text" id="autor" placeholder="Autor/Diretor">
+            <input type="number" id="ano" placeholder="Ano de Lançamento">
+            <input type="text" id="capa" placeholder="URL da Imagem da Capa">
+
+            <div class="modal-buttons">
+                <button onclick="salvarFilme()">Salvar</button>
+                <button onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
