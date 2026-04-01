@@ -1,53 +1,72 @@
 const prisma = require("../data/prisma");
+const { encerrarEvento, podeExcluirEvento } = require("../services/inscricoes.services");
 
 const cadastrar = async (req, res) => {
-    const data = req.body;
+    try {
+        const data = req.body;
 
-    data.data_evento = new Date(data.data_evento);
+        data.data_evento = new Date(data.data_evento);
 
-    const item = await prisma.eventos.create({
-        data
-    });
+        const item = await prisma.eventos.create({ data });
 
-    res.json(item).status(201).end();
+        res.status(201).json(item);
+
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 };
 
 const listar = async (req, res) => {
     const lista = await prisma.eventos.findMany();
-
-    res.json(lista).status(200).end();
+    res.status(200).json(lista);
 };
 
 const buscar = async (req, res) => {
     const { id } = req.params;
-    
+
     const item = await prisma.eventos.findUnique({
-        where: { id : Number(id) }
+        where: { id: Number(id) }
     });
 
-    res.json(item).status(200).end();
+    res.status(200).json(item);
 };
 
 const atualizar = async (req, res) => {
     const { id } = req.params;
     const dados = req.body;
-    
-    const item = await prisma.eventos.update({
-        where: { id : Number(id) },
-        data: dados
-    });
 
-    res.json(item).status(200).end();
+    try {
+        const item = await prisma.eventos.update({
+            where: { id: Number(id) },
+            data: dados
+        });
+
+        if (item.status === "ENCERRADO") {
+            await encerrarEvento(Number(id));
+        }
+
+        res.status(200).json(item);
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 };
 
 const excluir = async (req, res) => {
     const { id } = req.params;
-    
-    const item = await prisma.eventos.delete({
-        where: { id : Number(id) }
-    });
 
-    res.json(item).status(200).end();
+    try {
+        await podeExcluirEvento(Number(id));
+
+        const item = await prisma.eventos.delete({
+            where: { id: Number(id) }
+        });
+
+        res.status(200).json(item);
+
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
 };
 
 module.exports = {
@@ -56,4 +75,4 @@ module.exports = {
     buscar,
     atualizar,
     excluir
-}
+};
